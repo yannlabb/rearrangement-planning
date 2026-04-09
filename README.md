@@ -3,7 +3,7 @@ Visually Guided Rearrangement Planning
 
 Code for Y. Labbé, S. Zagoruyko, I. Kalevatykh, I. Laptev, J. Carpentier, M. Aubry and J.Sivic, "Monte-Carlo Tree Search for Efficient Visually Guided Rearrangement Planning", IEEE Robotics and Automation Letters.
 
-[[arXiv](https://arxiv.org/abs/1904.10348)] [[Project Page](https://ylabbe.github.io/rearrangement-planning/index.html)] [[Video](https://youtu.be/vZ1B3JaL9Os)] :
+[[arXiv](https://arxiv.org/abs/1904.10348)] [[Project Page](https://yannlabb.github.io/rearrangement-planning/index.html)] [[Video](https://youtu.be/vZ1B3JaL9Os)] :
 
 
 [![Rearrangement Planning](http://img.youtube.com/vi/fS5tTa_Tl1Y/0.jpg)](https://youtu.be/vZ1B3JaL9Os)
@@ -12,7 +12,7 @@ We provide the training and evaluation code along a pretrained model for extract
 
 We used the predicted object positions for performing visually guided rearrangement planning but it can be used for various other tasks such as building a pyramid with multiple cubes:
 
-![pyramid](https://ylabbe.github.io/rearrangement-planning/images/stacking2.gif)
+![pyramid](https://yannlabb.github.io/rearrangement-planning/images/stacking2.gif)
 
 Synthetic dataset generation, rearrangement planning simulation environment and MCTS planning code will be added later.
 
@@ -47,7 +47,7 @@ pytest -v rearrangement/test -m 'model or eval or train' --disable-pytest-warnin
 ## Using the pretrained model
 
 
-![predictions](https://ylabbe.github.io/rearrangement-planning/images/example_predictions.png)
+![predictions](https://yannlabb.github.io/rearrangement-planning/images/example_predictions.png)
 
 
 We provide a pretrained model for the UR5 robot with the [3-Finger Adaptive Robot Gripper](https://robotiq.com/products/3-finger-adaptive-robot-gripper).
@@ -62,9 +62,9 @@ This information can be plugged into standard planning tools to perform various 
 For example, you can use the predictions on one image to extract the position of multiple cubes and build a pyramid:
 
 
-![pyramid](https://ylabbe.github.io/rearrangement-planning/images/stacking.gif)
+![pyramid](https://yannlabb.github.io/rearrangement-planning/images/stacking.gif)
 
-We provide the notebook [`rearrangement/notebooks/Visualization`](https://github.com/ylabbe/rearrangement-planning/blob/master/rearrangement/notebooks/Visualization.ipynb) that makes predictions and visualize them on frames from the evaluation dataset.
+We provide the notebook [`rearrangement/notebooks/Visualization`](https://github.com/yannlabb/rearrangement-planning/blob/master/rearrangement/notebooks/Visualization.ipynb) that makes predictions and visualize them on frames from the evaluation dataset.
 You can use it as a starting point for using the model on your own data. 
 
 You can also see in this notebook how to use AlexNet features for matching the patches from a source and a target image.
@@ -72,7 +72,7 @@ You can also see in this notebook how to use AlexNet features for matching the p
 ## Reproducing the results from the paper
 
 
-![eval_ds](https://ylabbe.github.io/rearrangement-planning/images/evaluation_images.png)
+![eval_ds](https://yannlabb.github.io/rearrangement-planning/images/evaluation_images.png)
 
 
 You can reproduce the numbers from the papers which are reported on the real evaluation dataset by running:
@@ -81,12 +81,12 @@ python -m rearrangement.eval_on_real --run_id state-prediction-71538 --log_dir d
 ```
 This assumes that you have downloaded the data with the flag ``--eval``.
 
-The figures in relation with the vision section and experiments can be reproduced using the notebook [`rearrangement/notebooks/Paper Figures`](https://github.com/ylabbe/rearrangement-planning/blob/master/rearrangement/notebooks/Paper%20Figures.ipynb). 
+The figures in relation with the vision section and experiments can be reproduced using the notebook [`rearrangement/notebooks/Paper Figures`](https://github.com/yannlabb/rearrangement-planning/blob/master/rearrangement/notebooks/Paper%20Figures.ipynb). 
 
 ## Training new models
 
 
-![train_ds](https://ylabbe.github.io/rearrangement-planning/images/training_images.png)
+![train_ds](https://yannlabb.github.io/rearrangement-planning/images/training_images.png)
 
 
 You can train the equivalent of the model that we provide using the following command:
@@ -95,7 +95,7 @@ python -m rearrangement.main --ds_root data/datasets/synthetic-shapes-1to6 --sav
 ```
 This assumes that you have downloaded the data with the flag ``--train``.
 
-You can visualize the training and validation losses in the notebook [`rearrangement/notebooks/Training logs`](https://github.com/ylabbe/rearrangement-planning/blob/master/rearrangement/notebooks/Training%20logs.ipynb).
+You can visualize the training and validation losses in the notebook [`rearrangement/notebooks/Training logs`](https://github.com/yannlabb/rearrangement-planning/blob/master/rearrangement/notebooks/Training%20logs.ipynb).
 
 
 ## Citation
